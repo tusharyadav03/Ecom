@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: [true, "Please Enter Product Name"],
+    required: [true, "Please Enter Product Name"],
     trim: true
   },
   description: {
     type: String,
-    require: [true, "Please Enter Product Description"]
+    required: [true, "Please Enter Product Description"]
   },
   price: {
     type: Number,
-    require: [true, "Please Enter Prodcut Price"],
+    required: [true, "Please Enter Prodcut Price"],
     maxLength: [8, "Price cannot exceed 8 digits"]
   },
   rating: {
@@ -22,21 +22,21 @@ const productSchema = new mongoose.Schema({
   // image: [
   //   public_id: {
   //     type: String,
-  //     require: true
+  //     required: true
   //   },
   //   url: {
   //     type: String,
-  //     require: true
+  //     required: true
   //   }
   // ],
 
   category: {
     type: String,
-    require: [true, "Please Select Category of Product"]
+    required: [true, "Please Select Category of Product"]
   },
   Stock: {
     type: Number,
-    require: [true, "Please Enter Stock of a Product"],
+    required: [true, "Please Enter Stock of a Product"],
     maxLength: [4, "Stock cannot exceed 4 digit"],
     default: 1
   },
@@ -48,15 +48,15 @@ const productSchema = new mongoose.Schema({
     {
       name: {
         type: String,
-        require: true
+        required: true
       },
       rating: {
         type: Number,
-        require: true
+        required: true
       },
       comment: {
         type: String,
-        require: true
+        required: true
       }
     }
   ],
