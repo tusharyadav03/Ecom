@@ -1,4 +1,4 @@
 node_modules/
 frontend/node_modules/
 desktop.ini/
-config.env/
+config.env
