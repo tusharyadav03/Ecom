@@ -171,10 +171,10 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
-    role: req.body.role,
+    // role: req.body.role,
   };
 
-  await User.findByIdAndUpdate(req.params.id, newUserData, {
+  await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
@@ -195,7 +195,7 @@ exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
   })
 });
 
-//Get sngle User (admin) 
+//Get single User (admin) 
 exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
