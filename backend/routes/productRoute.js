@@ -10,7 +10,11 @@ const {
   deleteReview
 } = require("../controllers/productController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
+const { routeCheck } = require("../controllers/orderController");
 const router = express.Router();
+
+
+router.route("/routeCheck").get(routeCheck);
 
 router.route("/products").get(getAllProducts);
 
